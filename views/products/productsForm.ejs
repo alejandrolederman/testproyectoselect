@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head')%>
+    <body class= body-form>
+    
+        <a href="/"><img src="/img/logo/logo_small_icon_only.jpg " class= avatar-register width="50%"></a>
+      
+    
+        <form action="/products/productsForm" method="POST" enctype="multipart/form-data" >
+            <div class="text-color">
+
+                <!-- <label for="mark" class="text-color"> Marca   </label>
+                <br>
+                <input type="text" name="mark_id"  placeholder="Ingresa la marca" class="nombre-registro"> -->
+                <h4 lass="text-color"> Marca </h4>
+                <div>
+                    <select name="MarkId"class="nombre-registro">
+                        <option value="0">selecciona una marca</option>
+                        <% for (let i = 0; i < Mark.length; i++){ %> 
+                        <option value="<%= Mark[i].id %> ">
+                            <%= Mark[i].name %> 
+                        </option>
+                        <% } %> 
+                    </select>
+                </div>
+
+                <div>
+                    
+                </div>
+                <br>
+                <br>
+                <label for="model" class="text-color"> modelo  </label>
+                <br>
+                <input type="text" name="ModelId"  placeholder="Ingresa el modelo"  class="nombre-registro">
+                <br>
+                <br>                
+                <label for="price" class="text-color"> precio del producto  </label>
+               <br>
+                <input type="text" name="price" placeholder="Ingresa el precio" class="nombre-registro" >
+                <br>
+                <br> 
+                <label for="discount" class="text-color"> descuento del producto  </label>
+                <br>
+                 <input type="text" name="discount" placeholder="Ingresa el descuento" class="nombre-registro" >
+                 <br>
+                 <br> 
+                <label for="description" class="text-color">Descripcion</label>             
+                <br>
+                <input type="textarea" name="description"  placeholder="Ingresa Descripcion" class="nombre-registro">
+                <br>
+                <br>
+                <label for="camera" class="text-color"> cantidad de MP de la camara principal  </label>
+                <br>
+                <input type="text" name="camera" placeholder="cantidad de MP de la camara principal" class="nombre-registro" >
+                <br>
+                <br>    
+                <label for="screen" class="text-color"> tama&ntilde;o de pantalla  </label>
+                <br>
+                <input type="text" name="screen" placeholder="tamaño de pantalla"  class="nombre-registro">
+                <br>
+                <br>
+                <label for="memory" class="text-color"> capacidad de almacenamiento  </label>
+                <br>
+                <input type="text" name="memory" placeholder="capacidad de almacenamiento" class="nombre-registro">
+                <br>
+                <br>
+                <label for="unlocking" class="text-color"> modo de desbloqueo  </label>
+                <br>
+                <input type="text" name="unlocking" placeholder="modo de desbloqueo" class="nombre-registro" >
+                <br>
+                <br> 
+                              
+                    <br>
+                    <br>
+                <h4 class="text-color imagen-perfil">agrega una imagen del producto</h4>
+                <input type= "file" name="image" id="image" class="imagen-producto">
+                <br>
+                <br>
+                             </div>
+    
+            </div>  
+
+            <br>
+            <br>
+        <div>
+            <button type="submit" class="button-enviar" name= "button"><span><i class="fa fa-share-square-o" aria-hidden="true"></i> ENVIAR</span></button> 
+            <button class="button-borrar" name= "button"><span><i class="fa fa-trash-o" aria-hidden="true"></i> BORRAR</span></button>
+        </div> 
+            <br>
+            <br>
+        </form>
+        <%- include ('../partials/footer')%>
+</body>
+</html>
